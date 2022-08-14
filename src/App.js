@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 // component import
 import Nav from "./components/Nav";
 import ProductImgs from "./components/ProductImgs";
+import AddProduct from "./components/AddProduct";
 // images import
 import menuIcon from "./images/icon-menu.svg";
 import logo from "./images/logo.svg";
@@ -14,6 +15,8 @@ import avatar from "./images/image-avatar.png";
 const App = () => {
   let [navVisibility, setNavVisibility] = useState(false);
   let [cartVisibility, setCartVisibility] = useState(false);
+  let [cart, setCart] = useState(0);
+  let [itemAmt, setItemAmt] = useState(0);
   let [imgIndex, setImgIndex] = useState(0);
   let [width, setWidth] = useState(window.innerWidth);
   const updateDimensions = () => {
@@ -65,6 +68,7 @@ const App = () => {
             </div>
             <p className="originalPrice">$250.00</p>
           </div>
+          <AddProduct cart={cart} addCart={cart} itemAmt={itemAmt} setItemAmt={setItemAmt} />
         </div>
       </main>
       <div

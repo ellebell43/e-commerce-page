@@ -54,7 +54,7 @@ const ProductImgs = (props) => {
             <motion.img
               whileTap={{ scale: 1.1 }}
               key={i}
-              className={activeClass}
+              className={`${activeClass} paleHover`}
               src={thumbArr[i]}
               alt="product thumbnail"
               onClick={() => { thumbnailClick(i) }}
