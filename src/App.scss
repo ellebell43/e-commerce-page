@@ -100,7 +100,6 @@ button:hover {
 
   main {
     .imgSection {
-
       .mainImg {
         position: relative;
 
@@ -130,6 +129,52 @@ button:hover {
               height: auto;
             }
           }
+        }
+      }
+    }
+
+    .productInfo {
+      padding: 0 15px;
+
+      .companyName {
+        color: $orange;
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-size: 12px;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      .description {
+        color: $dark-grayish-blue;
+        line-height: 24px;
+      }
+
+      .price {
+        @include centerFlex();
+        justify-content: space-between;
+        font-weight: 700;
+
+        .salePrice {
+          @include centerFlex();
+
+          .price {
+            font-size: 32px;
+          }
+
+          .sale {
+            color: $orange;
+            background-color: $pale-orange;
+            border-radius: 5px;
+            padding: 3px 10px;
+          }
+        }
+
+        .originalPrice {
+          color: $grayish-blue;
+          text-decoration: line-through;
         }
       }
     }
@@ -208,6 +253,26 @@ button:hover {
             width: 100%;
             height: auto;
           }
+        }
+      }
+
+      .productInfo {
+        padding: 75px;
+
+        .price {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+        }
+
+        .salePrice {
+          .price {
+            margin: 0;
+          }
+        }
+
+        .originalPrice {
+          margin: 0;
         }
       }
     }

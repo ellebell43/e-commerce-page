@@ -54,7 +54,18 @@ const App = () => {
       </header>
       <main>
         <ProductImgs imgIndex={imgIndex} setImgIndex={setImgIndex} />
-        <h1>Testttttt... o_o</h1>
+        <div className="productInfo">
+          <p className="companyName">SNEAKER COMPANY</p>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p className="description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+          <div className="price">
+            <div className="salePrice">
+              <p className="price">$125.00</p>
+              <p className="sale">%50</p>
+            </div>
+            <p className="originalPrice">$250.00</p>
+          </div>
+        </div>
       </main>
       <div
         className={`lightbox ${navVisibility || cartVisibility ? "" : "hidden"}`}
