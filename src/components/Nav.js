@@ -29,11 +29,21 @@ const Nav = (props) => {
       <motion.button onClick={() => { props.setNavVisibility(!props.navVisibility) }} className="closeBtn mobileElement">
         <img src={xIcon} alt="close nav menu" />
       </motion.button>
-      <motion.a variants={props.width < 860 ? itemAnimation : noAnimation}>Collecitons</motion.a>
-      <motion.a variants={props.width < 860 ? itemAnimation : noAnimation}>Men</motion.a>
-      <motion.a variants={props.width < 860 ? itemAnimation : noAnimation}>Women</motion.a>
-      <motion.a variants={props.width < 860 ? itemAnimation : noAnimation}>About</motion.a>
-      <motion.a variants={props.width < 860 ? itemAnimation : noAnimation}>Contact</motion.a>
+      <motion.a
+        initial={props.width < 860 ? { x: -20, opacity: 0 } : { x: 0, opacity: 1 }}
+        variants={props.width < 860 ? itemAnimation : noAnimation}>Collecitons</motion.a>
+      <motion.a
+        initial={props.width < 860 ? { x: -20, opacity: 0 } : { x: 0, opacity: 1 }}
+        variants={props.width < 860 ? itemAnimation : noAnimation}>Men</motion.a>
+      <motion.a
+        initial={props.width < 860 ? { x: -20, opacity: 0 } : { x: 0, opacity: 1 }}
+        variants={props.width < 860 ? itemAnimation : noAnimation}>Women</motion.a>
+      <motion.a
+        initial={props.width < 860 ? { x: -20, opacity: 0 } : { x: 0, opacity: 1 }}
+        variants={props.width < 860 ? itemAnimation : noAnimation}>About</motion.a>
+      <motion.a
+        initial={props.width < 860 ? { x: -20, opacity: 0 } : { x: 0, opacity: 1 }}
+        variants={props.width < 860 ? itemAnimation : noAnimation}>Contact</motion.a>
     </motion.nav>
   )
 }

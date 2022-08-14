@@ -299,6 +299,9 @@ button:hover {
 
       .productInfo {
         padding: 75px;
+        @include centerFlex();
+        flex-direction: column;
+        align-items: flex-start;
 
         .price {
           flex-direction: column;
@@ -314,6 +317,20 @@ button:hover {
 
         .originalPrice {
           margin: 0;
+        }
+
+        .addProduct {
+          flex-direction: row;
+          width: 100%;
+
+          .increment {
+            width: calc(30% - 30px);
+            gap: 0;
+          }
+
+          .addToCart {
+            width: 60%;
+          }
         }
       }
     }

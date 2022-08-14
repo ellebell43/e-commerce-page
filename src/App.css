@@ -267,6 +267,12 @@ button:hover {
   }
   .app main .productInfo {
     padding: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .app main .productInfo .price {
     flex-direction: column;
@@ -278,6 +284,17 @@ button:hover {
   }
   .app main .productInfo .originalPrice {
     margin: 0;
+  }
+  .app main .productInfo .addProduct {
+    flex-direction: row;
+    width: 100%;
+  }
+  .app main .productInfo .addProduct .increment {
+    width: calc(30% - 30px);
+    gap: 0;
+  }
+  .app main .productInfo .addProduct .addToCart {
+    width: 60%;
   }
 }
 
