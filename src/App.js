@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Nav from "./components/Nav";
 import ProductImgs from "./components/ProductImgs";
 import AddProduct from "./components/AddProduct";
+import Cart from "./components/Cart";
 // images import
 import menuIcon from "./images/icon-menu.svg";
 import logo from "./images/logo.svg";
@@ -15,8 +16,9 @@ import avatar from "./images/image-avatar.png";
 const App = () => {
   let [navVisibility, setNavVisibility] = useState(false);
   let [cartVisibility, setCartVisibility] = useState(false);
-  let [cart, setCart] = useState(0);
+  let [cart, setCart] = useState([]);
   let [itemAmt, setItemAmt] = useState(0);
+  let [cartAmount, setCartAmount] = useState(0);
   let [imgIndex, setImgIndex] = useState(0);
   let [width, setWidth] = useState(window.innerWidth);
   const updateDimensions = () => {
@@ -31,11 +33,11 @@ const App = () => {
   const lightboxClick = () => {
     if (navVisibility) { setNavVisibility(false) }
     if (cartVisibility) { setCartVisibility(false) }
-
   }
 
   return (
     <div className="app">
+      <Cart cart={cart} setCart={setCart} />
       <header>
         <div className="navLogoContainer">
           <motion.button
@@ -50,6 +52,7 @@ const App = () => {
         </div>
         <div className="profileCartContainer">
           <motion.button whileHover={{ scale: 1.1 }}>
+            {cartAmount > 0 ? <p className="cartAmount">{cartAmount}</p> : <div />}
             <img src={cartIcon} alt="your cart" />
           </motion.button>
           <img src={avatar} alt="your avatar" className="avatar" />
@@ -68,7 +71,14 @@ const App = () => {
             </div>
             <p className="originalPrice">$250.00</p>
           </div>
-          <AddProduct cart={cart} addCart={cart} itemAmt={itemAmt} setItemAmt={setItemAmt} />
+          <AddProduct
+            cart={cart}
+            setCart={setCart}
+            itemAmt={itemAmt}
+            setItemAmt={setItemAmt}
+            cartAmount={cartAmount}
+            setCartAmount={setCartAmount}
+          />
         </div>
       </main>
       <div
