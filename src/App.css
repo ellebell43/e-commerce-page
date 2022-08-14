@@ -15,36 +15,100 @@ button:hover {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+}
 .app header {
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
   gap: 20px;
-  width: 100%;
+  z-index: 29;
+  border-bottom: 1px solid hsl(223deg, 64%, 98%);
 }
 .app header .navLogoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
   gap: 20px;
+  justify-content: flex-start;
+  width: 66%;
 }
 .app header .navLogoContainer .logo {
   width: 125px;
   height: auto;
 }
+.app header .navLogoContainer nav {
+  position: fixed;
+  height: 100vh;
+  width: 220px;
+  top: 0;
+  left: -260px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  padding-top: 100px;
+  z-index: 31;
+}
+.app header .navLogoContainer nav .closeBtn {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+}
+.app header .navLogoContainer nav a {
+  font-weight: 700;
+  text-decoration: none;
+  color: hsl(220deg, 13%, 13%);
+}
 .app header .profileCartContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
   gap: 20px;
+  justify-content: flex-end;
+  width: 33%;
 }
 .app header .profileCartContainer .avatar {
   height: 30px;
   width: auto;
+}
+.app .lightbox {
+  position: fixed;
+  opacity: 0.75;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+@media (min-width: 860px) {
+  .mobileElement {
+    display: none;
+  }
+  .app header .navLogoContainer nav {
+    position: static;
+    opacity: 1;
+    flex-direction: row;
+    width: initial;
+    height: initial;
+    padding: 0;
+    gap: 30px;
+    margin-left: 50px;
+  }
+  .app header .navLogoContainer nav a {
+    color: hsl(220deg, 14%, 75%);
+    font-weight: 400;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

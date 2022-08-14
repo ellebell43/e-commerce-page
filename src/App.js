@@ -1,5 +1,9 @@
+// styles and packages import
 import "./App.css";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+// component import
+import Nav from "./components/Nav";
 // images import
 import menuIcon from "./images/icon-menu.svg";
 import logo from "./images/logo.svg";
@@ -7,14 +11,37 @@ import cartIcon from "./images/icon-cart.svg";
 import avatar from "./images/image-avatar.png";
 
 const App = () => {
+  let [navVisibility, setNavVisibility] = useState(false);
+  let [cartVisibility, setCartVisibility] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const lightboxClick = () => {
+    if (navVisibility) { setNavVisibility(false) }
+    if (cartVisibility) { setCartVisibility(false) }
+
+  }
+
   return (
     <div className="app">
       <header>
         <div className="navLogoContainer">
-          <motion.button whileHover={{ scale: 1.1 }} className="menuBtn">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            className="menuBtn mobileElement"
+            onClick={() => { setNavVisibility(!navVisibility) }}
+          >
             <img src={menuIcon} alt="menu" />
           </motion.button>
           <img src={logo} alt="sneakers logo" className="logo" />
+          <Nav navVisibility={navVisibility} setNavVisibility={setNavVisibility} width={width} />
         </div>
         <div className="profileCartContainer">
           <motion.button whileHover={{ scale: 1.1 }}>
@@ -23,6 +50,10 @@ const App = () => {
           <img src={avatar} alt="your avatar" className="avatar" />
         </div>
       </header>
+      <div
+        className={`lightbox ${navVisibility || cartVisibility ? "" : "hidden"}`}
+        onClick={lightboxClick}
+      />
     </div>
   )
 }

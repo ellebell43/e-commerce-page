@@ -10,7 +10,6 @@ $light-grayish-blue: hsl(223, 64%, 98%);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
   gap: 20px;
 }
 
@@ -30,27 +29,105 @@ button:hover {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 .app {
+  max-width: 1080px;
+  margin: 0 auto;
+
   header {
     padding: 20px;
     @include centerFlex();
-    width: 100%;
+    z-index: 29;
+    border-bottom: 1px solid $light-grayish-blue;
 
     .navLogoContainer {
       @include centerFlex();
+      justify-content: flex-start;
+      width: 66%;
 
       .logo {
         width: 125px;
         height: auto;
       }
+
+      nav {
+        position: fixed;
+        height: 100vh;
+        width: 220px;
+        top: 0;
+        left: -260px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: white;
+        padding: 20px;
+        padding-top: 100px;
+        z-index: 31;
+
+        .closeBtn {
+          position: absolute;
+          top: 25px;
+          left: 20px;
+        }
+
+        a {
+          font-weight: 700;
+          text-decoration: none;
+          color: $dark-blue;
+        }
+      }
     }
 
     .profileCartContainer {
       @include centerFlex();
+      justify-content: flex-end;
+      width: 33%;
 
       .avatar {
         height: 30px;
         width: auto;
+      }
+    }
+  }
+
+  .lightbox {
+    position: fixed;
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+  }
+}
+
+@media (min-width: 860px) {
+  .mobileElement {
+    display: none;
+  }
+
+  .app {
+    header {
+      .navLogoContainer {
+        nav {
+          position: static;
+          opacity: 1;
+          flex-direction: row;
+          width: initial;
+          height: initial;
+          padding: 0;
+          gap: 30px;
+          margin-left: 50px;
+
+          a {
+            color: $grayish-blue;
+            font-weight: 400;
+          }
+        }
       }
     }
   }
