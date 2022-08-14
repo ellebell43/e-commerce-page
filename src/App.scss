@@ -6,9 +6,52 @@ $dark-grayish-blue: hsl(219, 9%, 45%);
 $grayish-blue: hsl(220, 14%, 75%);
 $light-grayish-blue: hsl(223, 64%, 98%);
 
+@mixin centerFlex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 20px;
+}
+
 body {
   margin: 0;
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 16px;
   color: $dark-blue;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.app {
+  header {
+    padding: 20px;
+    @include centerFlex();
+    width: 100%;
+
+    .navLogoContainer {
+      @include centerFlex();
+
+      .logo {
+        width: 125px;
+        height: auto;
+      }
+    }
+
+    .profileCartContainer {
+      @include centerFlex();
+
+      .avatar {
+        height: 30px;
+        width: auto;
+      }
+    }
+  }
 }
