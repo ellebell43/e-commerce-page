@@ -4,6 +4,7 @@ body {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 16px;
   color: hsl(220deg, 13%, 13%);
+  overflow-x: hidden;
 }
 
 button {
@@ -19,6 +20,10 @@ button:hover {
   display: none;
 }
 
+.desktopElement {
+  display: none;
+}
+
 .app {
   max-width: 1080px;
   margin: 0 auto;
@@ -30,7 +35,7 @@ button:hover {
   align-items: center;
   gap: 20px;
   z-index: 29;
-  border-bottom: 1px solid hsl(223deg, 64%, 98%);
+  border-bottom: 1px solid hsl(220deg, 14%, 75%);
 }
 .app header .navLogoContainer {
   display: flex;
@@ -80,6 +85,36 @@ button:hover {
   height: 30px;
   width: auto;
 }
+.app main .imgSection .mainImg {
+  position: relative;
+}
+.app main .imgSection .mainImg img {
+  width: 100%;
+  height: auto;
+}
+.app main .imgSection .mainImg .imgBtnContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 40px);
+}
+.app main .imgSection .mainImg .imgBtnContainer button {
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.app main .imgSection .mainImg .imgBtnContainer button img {
+  width: 10px;
+  height: auto;
+}
 .app .lightbox {
   position: fixed;
   opacity: 0.75;
@@ -93,7 +128,7 @@ button:hover {
 
 @media (min-width: 860px) {
   .mobileElement {
-    display: none;
+    display: none !important;
   }
   .app header .navLogoContainer nav {
     position: static;
@@ -108,6 +143,38 @@ button:hover {
   .app header .navLogoContainer nav a {
     color: hsl(220deg, 14%, 75%);
     font-weight: 400;
+  }
+  .app main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .app main .imgSection {
+    padding: 75px;
+  }
+  .app main .imgSection .mainImg img {
+    border-radius: 20px;
+  }
+  .app main .imgSection .thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+  }
+  .app main .imgSection .thumbnails button {
+    border-radius: 10px;
+    width: 20%;
+    padding: 0;
+  }
+  .app main .imgSection .thumbnails .active {
+    border: 3px solid hsl(26deg, 100%, 55%);
+    opacity: 0.5;
+    height: calc(100% - 6px);
+  }
+  .app main .imgSection .thumbnails img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
   }
 }
 
