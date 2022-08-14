@@ -38,10 +38,20 @@ const ProductImgs = (props) => {
     <div className="imgSection">
       <div className="mainImg">
         <div className="imgBtnContainer">
-          <motion.button whileTap={{ scale: 1.2 }} onClick={() => { changeImg(-1) }} className="mobileElement">
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            onClick={() => { changeImg(-1) }}
+            className="mobileElement"
+          >
             <img src={prevIcon} alt="" />
           </motion.button>
-          <motion.button whileTap={{ scale: 1.2 }} onClick={() => { changeImg(1) }} className="mobileElement">
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            onClick={() => { changeImg(1) }}
+            className="mobileElement"
+          >
             <img src={nextIcon} alt="" />
           </motion.button>
         </div>
