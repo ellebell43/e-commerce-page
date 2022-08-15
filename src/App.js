@@ -35,9 +35,13 @@ const App = () => {
     if (cartVisibility) { setCartVisibility(false) }
   }
 
+  const toggleCart = () => {
+    document.getElementById("cart").classList.toggle("hidden");
+  }
+
   return (
     <div className="app">
-      <Cart cart={cart} setCart={setCart} />
+      <Cart cart={cart} setCart={setCart} cartAmount={cartAmount} setCartAmount={setCartAmount} />
       <header>
         <div className="navLogoContainer">
           <motion.button
@@ -51,7 +55,7 @@ const App = () => {
           <Nav navVisibility={navVisibility} setNavVisibility={setNavVisibility} width={width} />
         </div>
         <div className="profileCartContainer">
-          <motion.button whileHover={{ scale: 1.1 }}>
+          <motion.button whileHover={{ scale: 1.1 }} onClick={toggleCart}>
             {cartAmount > 0 ? <p className="cartAmount">{cartAmount}</p> : <div />}
             <img src={cartIcon} alt="your cart" />
           </motion.button>
