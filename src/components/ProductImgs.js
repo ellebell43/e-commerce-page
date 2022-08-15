@@ -55,7 +55,7 @@ const ProductImgs = (props) => {
             <img src={nextIcon} alt="" />
           </motion.button>
         </div>
-        <img src={imgArr[props.imgIndex]} alt="image of shoes" />
+        <img src={imgArr[props.imgIndex]} alt="shoes" />
       </div>
       <div className="thumbnails desktopElement">
         {thumbArr.map((el, i) => {

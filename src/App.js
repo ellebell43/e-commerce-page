@@ -36,12 +36,18 @@ const App = () => {
   }
 
   const toggleCart = () => {
-    document.getElementById("cart").classList.toggle("hidden");
+    setCartVisibility(!cartVisibility);
   }
 
   return (
     <div className="app">
-      <Cart cart={cart} setCart={setCart} cartAmount={cartAmount} setCartAmount={setCartAmount} />
+      <Cart
+        cart={cart}
+        setCart={setCart}
+        cartAmount={cartAmount}
+        setCartAmount={setCartAmount}
+        cartVisibility={cartVisibility}
+      />
       <header>
         <div className="navLogoContainer">
           <motion.button

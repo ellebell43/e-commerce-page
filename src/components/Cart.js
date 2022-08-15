@@ -16,7 +16,7 @@ const Cart = (props) => {
   }
 
   return (
-    <div id="cart" className="cart hidden">
+    <div id="cart" className={`cart ${props.cartVisibility ? "" : "hidden"}`}>
       <p className="label">Cart</p>
       {props.cartAmount <= 0 ?
         <div className="cartContent"><p className="emptyCart">Your cart is empty</p></div> :

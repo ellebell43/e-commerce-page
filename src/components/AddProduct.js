@@ -45,6 +45,14 @@ const AddProduct = (props) => {
       count += arr[i].amount;
     }
 
+    let button = document.getElementById("addToCart");
+    button.innerHTML = "<p>Success!</p>"
+    setTimeout(() => {
+      button.innerHTML =
+        `<img src=${cartIcon} alt='' />
+          <p>Add to cart</p>`;
+    }, 1500);
+
     props.setCartAmount(count);
     props.setCart(arr);
     props.setItemAmt(0);
@@ -75,6 +83,7 @@ const AddProduct = (props) => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="addToCart paleHover"
+        id="addToCart"
         onClick={() => { addToCart(sneakers, props.itemAmt) }}
       >
         <img src={cartIcon} alt="" />
