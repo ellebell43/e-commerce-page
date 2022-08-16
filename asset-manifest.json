@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/e-commerce-page/static/css/main.fccd173d.css",
+    "main.js": "/e-commerce-page/static/js/main.c3c6ba71.js",
+    "static/media/image-product-2.jpg": "/e-commerce-page/static/media/image-product-2.c8bb0aaccecdebb16596.jpg",
+    "static/media/image-product-1.jpg": "/e-commerce-page/static/media/image-product-1.520cc50bd13955f55cb2.jpg",
+    "static/media/image-product-3.jpg": "/e-commerce-page/static/media/image-product-3.af5c71ba9ffcc0b8b54d.jpg",
+    "static/media/image-product-4.jpg": "/e-commerce-page/static/media/image-product-4.9962862ef3eff6d65e5b.jpg",
+    "static/media/logo.svg": "/e-commerce-page/static/media/logo.4fe9c1e86cf9bf600f0c239f6a6e5317.svg",
+    "static/media/icon-delete.svg": "/e-commerce-page/static/media/icon-delete.1fd1f1f7d9f8ce5557b44ca3470a18b8.svg",
+    "static/media/icon-cart.svg": "/e-commerce-page/static/media/icon-cart.539ec608f50e707c94d583ec11acf99d.svg",
+    "static/media/icon-cart-white.svg": "/e-commerce-page/static/media/icon-cart-white.b7f75d6e2cdaf801980a8baec7b69074.svg",
+    "index.html": "/e-commerce-page/index.html",
+    "static/media/icon-plus.svg": "/e-commerce-page/static/media/icon-plus.b297868c5f938612f4f099f9f9d73aea.svg",
+    "static/media/icon-minus.svg": "/e-commerce-page/static/media/icon-minus.f5073aa8273785ecf6b7811630782736.svg",
+    "static/media/icon-close.svg": "/e-commerce-page/static/media/icon-close.c390448669f3a8a4c4b2ada2f9938959.svg",
+    "static/media/icon-menu.svg": "/e-commerce-page/static/media/icon-menu.c6107d03f1edcf73523ebd8cbc50a443.svg",
+    "static/media/icon-previous.svg": "/e-commerce-page/static/media/icon-previous.80616402c611cc0a6651d0b751da8a9b.svg",
+    "static/media/icon-next.svg": "/e-commerce-page/static/media/icon-next.9621183a551a9985b4bd7536c9a69c66.svg",
+    "main.fccd173d.css.map": "/e-commerce-page/static/css/main.fccd173d.css.map",
+    "main.c3c6ba71.js.map": "/e-commerce-page/static/js/main.c3c6ba71.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fccd173d.css",
+    "static/js/main.c3c6ba71.js"
+  ]
+}
