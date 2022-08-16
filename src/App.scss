@@ -36,7 +36,7 @@ button:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .desktopElement {
@@ -44,7 +44,7 @@ button:hover {
 }
 
 .app {
-  max-width: 1080px;
+  max-width: 500px;
   margin: 0 auto;
   padding-bottom: 50px;
 
@@ -328,6 +328,14 @@ button:hover {
   }
 
   .app {
+    max-width: 1080px;
+
+    .cart {
+      max-width: 350px;
+      right: 20px;
+      left: initial;
+    }
+
     header {
       .navLogoContainer {
         nav {
@@ -339,6 +347,7 @@ button:hover {
           padding: 0;
           gap: 30px;
           margin-left: 50px;
+          z-index: 20;
 
           a {
             color: $grayish-blue;
@@ -352,7 +361,30 @@ button:hover {
       display: grid;
       grid-template-columns: 1fr 1fr;
 
+      .gallery {
+        z-index: 32;
+        position: absolute;
+        width: 50%;
+        max-width: 450px;
+        left: calc(50% - 263px);
+        top: 0;
+
+        .imgBtnContainer {
+          .galleryLeftBtn {
+            position: relative;
+            right: 40px;
+          }
+
+          .galleryRightBtn {
+            position: relative;
+            left: 40px;
+          }
+        }
+      }
+
       .imgSection {
+        @include centerFlex();
+        flex-direction: column;
         padding: 75px;
 
         .mainImg {

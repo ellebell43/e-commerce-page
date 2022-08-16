@@ -22,7 +22,7 @@ button:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .desktopElement {
@@ -30,7 +30,7 @@ button:hover {
 }
 
 .app {
-  max-width: 1080px;
+  max-width: 500px;
   margin: 0 auto;
   padding-bottom: 50px;
 }
@@ -301,6 +301,14 @@ button:hover {
   .mobileElement {
     display: none !important;
   }
+  .app {
+    max-width: 1080px;
+  }
+  .app .cart {
+    max-width: 350px;
+    right: 20px;
+    left: initial;
+  }
   .app header .navLogoContainer nav {
     position: static;
     opacity: 1;
@@ -310,6 +318,7 @@ button:hover {
     padding: 0;
     gap: 30px;
     margin-left: 50px;
+    z-index: 20;
   }
   .app header .navLogoContainer nav a {
     color: hsl(220deg, 14%, 75%);
@@ -319,7 +328,28 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .app main .gallery {
+    z-index: 32;
+    position: absolute;
+    width: 50%;
+    max-width: 450px;
+    left: calc(50% - 263px);
+    top: 0;
+  }
+  .app main .gallery .imgBtnContainer .galleryLeftBtn {
+    position: relative;
+    right: 40px;
+  }
+  .app main .gallery .imgBtnContainer .galleryRightBtn {
+    position: relative;
+    left: 40px;
+  }
   .app main .imgSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
     padding: 75px;
   }
   .app main .imgSection .mainImg img {

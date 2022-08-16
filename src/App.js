@@ -16,6 +16,7 @@ import avatar from "./images/image-avatar.png";
 const App = () => {
   let [navVisibility, setNavVisibility] = useState(false);
   let [cartVisibility, setCartVisibility] = useState(false);
+  let [galleryVisibility, setGalleryVisibility] = useState(false);
   let [cart, setCart] = useState([]);
   let [itemAmt, setItemAmt] = useState(0);
   let [cartAmount, setCartAmount] = useState(0);
@@ -33,6 +34,10 @@ const App = () => {
   const lightboxClick = () => {
     if (navVisibility) { setNavVisibility(false) }
     if (cartVisibility) { setCartVisibility(false) }
+    if (galleryVisibility) {
+      setGalleryVisibility(false);
+      document.getElementById("gallery").classList.add("hidden")
+    }
   }
 
   const toggleCart = () => {
@@ -69,7 +74,19 @@ const App = () => {
         </div>
       </header>
       <main>
-        <ProductImgs imgIndex={imgIndex} setImgIndex={setImgIndex} />
+        <ProductImgs
+          imgIndex={imgIndex}
+          setImgIndex={setImgIndex}
+          setGalleryVisibility={setGalleryVisibility}
+          width={width}
+          gallery={false}
+        />
+        <ProductImgs
+          imgIndex={imgIndex}
+          setImgIndex={setImgIndex}
+          setGalleryVisibility={setGalleryVisibility}
+          gallery={true}
+        />
         <div className="productInfo">
           <p className="companyName">SNEAKER COMPANY</p>
           <h1>Fall Limited Edition Sneakers</h1>
@@ -92,7 +109,7 @@ const App = () => {
         </div>
       </main>
       <div
-        className={`lightbox ${navVisibility || cartVisibility ? "" : "hidden"}`}
+        className={`lightbox ${navVisibility || cartVisibility || galleryVisibility ? "" : "hidden"}`}
         onClick={lightboxClick}
       />
     </div>

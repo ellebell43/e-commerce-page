@@ -34,15 +34,25 @@ const ProductImgs = (props) => {
     props.setImgIndex(i);
   }
 
+  const toggleGallery = () => {
+    if (props.width > 860) {
+      document.getElementById("gallery").classList.remove("hidden")
+      props.setGalleryVisibility(true);
+    }
+  }
+
   return (
-    <div className="imgSection">
+    <div
+      className={`imgSection ${props.gallery ? "gallery hidden" : ""}`}
+      id={props.gallery ? "gallery" : "imgSection"}
+    >
       <div className="mainImg">
-        <div className="imgBtnContainer">
+        <div className="imgBtnContainer" onClick={toggleGallery}>
           <motion.button
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
             onClick={() => { changeImg(-1) }}
-            className="mobileElement"
+            className={props.gallery ? "galleryLeftBtn" : "mobileElement"}
           >
             <img src={prevIcon} alt="" />
           </motion.button>
@@ -50,7 +60,7 @@ const ProductImgs = (props) => {
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
             onClick={() => { changeImg(1) }}
-            className="mobileElement"
+            className={props.gallery ? "galleryRightBtn" : "mobileElement"}
           >
             <img src={nextIcon} alt="" />
           </motion.button>
